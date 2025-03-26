@@ -52,3 +52,10 @@ make: *** [makefile:2: clean] Error 1  <=== make returns an error
 ```
 
 so it seems that Win 10.x maybe introduced some problem that occures only with using make.exe this way
+
+comparing the output of `make.exe -d > out.txt 2>&1` between Wine 10.0 (left) and Windows (right) shows some "Reaping" problems
+
+![image](https://github.com/user-attachments/assets/049b87be-6d53-454f-861a-7c4e5f3ec779)
+
+
+
