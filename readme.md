@@ -19,6 +19,15 @@ del *.not_existing_at_all
 D:\temp\bug_repo0\*.not_existing_at_all konnte nicht gefunden werden <=== feedback from the Windows del command that there are no such files
 ```
 
+up-to-date Ubuntu 22.04.5 LTS (up-to-date) + `sudo apt install wine32` => wine 6.0.3 ===> **OK**
+
+```
+wine make.exe
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+del *.not_existing_at_all
+*.not_existing_at_all: File Not Found <=== feedback from Wine del command - same as on Windows
+```
+
 up-to-date Ubuntu 24.10 (up-to-date) + `sudo apt install wine32` => wine 9.0 ===> **OK**
 
 
@@ -52,3 +61,10 @@ make: *** [makefile:2: clean] Error 1  <=== make returns an error
 ```
 
 so it seems that Win 10.x maybe introduced some problem that occures only with using make.exe this way
+
+comparing the output of `make.exe -d > out.txt 2>&1` between Wine 10.0 (left) and Windows (right) shows some "Reaping" problems
+
+![image](https://github.com/user-attachments/assets/049b87be-6d53-454f-861a-7c4e5f3ec779)
+
+
+
